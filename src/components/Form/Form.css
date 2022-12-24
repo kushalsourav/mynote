@@ -1,0 +1,31 @@
+.form-control {
+    margin: 0;
+}
+.input-label {
+    display: block;
+    padding: 5px;
+    margin-bottom: 0;
+}
+.input {
+    margin-top: 8px;
+    border-color: var(--color-tertiary);
+}
+.form-box {
+    display: block;
+    margin:  0 auto;
+    width: 25rem;
+}
+.form-btn {
+    padding: 0 3px 0 5px;
+    margin:1.3rem 0 ;
+}
+.input-icon {
+    top: 2.3rem!important;
+    right: 0%;
+    color: var(--color-tertiary);;
+}
+.error {
+    color: var(--color-danger);
+    font-size: 1rem;
+    font-weight: bold;
+}
