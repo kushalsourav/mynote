@@ -2,7 +2,7 @@ import axios from "axios";
 import Form from "../../components/Form/Form";
 import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import useToggle from "../../hooks/useToggle";
-
+import useToast from "../../hooks/useToast";
 import useError from "../../hooks/useError";
 import { useData } from "../../contexts/DataContext/DataContext";
 
@@ -11,7 +11,7 @@ const SignUp = () => {
     const [toggle, setToggle] = useToggle();
     const [error, setError] = useError();
     const {data,setData} = useData();
-
+    const postToast = useToast();
     const getUserInputs = async (e) => {
         e.preventDefault();
         if(authState.email !== '' && authState.firstName !== '' && authState.lastName !== ''  && authState.password !== '' && authState.password === authState.confirmPassword)  {
@@ -31,7 +31,7 @@ const SignUp = () => {
                         })
                     } catch (error) {
                         if(error.response.status === 422) {
-                            console.log("warning", "entered email already exists");
+                            postToast("warning", "entered email already exists");
                          }
                     }
         } else {
@@ -46,7 +46,7 @@ const SignUp = () => {
         <>
           <Form onHandleSubmit={getUserInputs} type={data.formType} authState={authState}  authDispatch={authDispatch} passVisible={!toggle}  setPassVisible={setToggle} error={error} />
         </>
-    )
+    );
 };
 
 export default SignUp;
