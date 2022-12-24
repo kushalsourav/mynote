@@ -1,0 +1,11 @@
+.editor-button {
+    margin-top: 20px;
+    position: absolute;
+    right: 10px;
+}
+.label , .priority {
+    margin-top: 1.1rem;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+}

@@ -1,0 +1,53 @@
+.note-card {
+  display: grid;
+  grid-template-rows: 30px minmax(100px , auto) 30px;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.note-title {
+    font-size: 1.3rem;
+}
+.note-description {
+    word-break: break-all;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+.note-elements {
+    display: flex;
+    justify-content: space-between;
+}
+.note-icons {
+    display: flex;
+    gap: 1rem;
+}
+.note-date {
+    font-size: 14px;
+    color: rgb(109, 109, 109);
+    font-weight: 800;
+}
+.note-label {
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    padding:2px 5px;
+    background-color: rgb(133, 133, 133);
+    font-size: 14px;
+}
+.note-colors {
+    position: absolute;
+    right: 0px;
+    top: 25%;
+}
+.note-checkbox {
+    display: none;
+}
+.btn-icon {
+    color: var(--color-tertiary);
+}
+.btn-edit {
+position: absolute;
+top: 1rem;
+right: 1rem;
+}

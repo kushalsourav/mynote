@@ -1,0 +1,16 @@
+.color-card {
+    background-color: #fff;
+    height: 95px;
+    padding: 8px;
+    margin-right: 5px;
+}
+.colors {
+    display: grid;
+    grid-template-columns: 35px 35px 35px;
+    grid-template-rows: 35px 35px;
+    gap: 8px;
+}
+.color-item {
+    height: 35px;
+    width: 35px;
+}
