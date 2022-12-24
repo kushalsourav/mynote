@@ -1,0 +1,8 @@
+.toast {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+.toast-{
+    display: none;
+}

@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import { useData } from "../../contexts/DataContext/DataContext";
-
+import useToast from "../../hooks/useToast";
 import useToggle from "../../hooks/useToggle";
 
 const SignIn = () => {
     const {authDispatch, authState} = useAuth();
     const [toggle, setToggle] = useToggle();
     const {data} = useData();
-
+    const postToast = useToast();
     let navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -25,17 +25,16 @@ const SignIn = () => {
                 navigate('/Home');
                }
             });
-        } 
+        }
         catch (error) {
-            console.log(error)
             if(error.response.status === 404) {
-                 console.log('warning',"the email you entered is not registered")
+                 postToast('warning',"the email you entered is not registered");
             }
             if(error.response.status === 401) {
-                 console.log('warning',"you have entered incorrect password")
+                 postToast('warning',"you have entered incorrect password");
             }
         }
-    }
+    };
     const guestLogin = async (e) => {
         try {
             await axios.post('/api/auth/login', 
@@ -52,7 +51,7 @@ const SignIn = () => {
           } catch (error) {
               console.log(error)
           }
-    }
+    };
     return(
         <>
             <Form onHandleSubmit={handleLogin} type={data.formType} authState={authState} authDispatch={authDispatch} passVisible={!toggle} setPassVisible={setToggle} /> 

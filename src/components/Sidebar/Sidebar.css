@@ -1,0 +1,31 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.sidebar-items {
+    display: flex;
+    gap: 3.5rem;
+    padding: 5px 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+}
+
+.sidebar-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.sidebar-items:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.sidebar-items:first-child {
+    margin-top: 1rem;
+}
+.sidebar-icon {
+    color: var(--color-tertiary);
+}

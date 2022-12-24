@@ -3,6 +3,11 @@ import DataReducer from "../../reducers/DataReducer/DataReducer";
 
 const initialDataState = {
     formType:"",
+    modal:false,
+    toast: {
+        toastType: '',
+        toastMessage: ''
+      },
 }
 
 const DataContext = createContext();
