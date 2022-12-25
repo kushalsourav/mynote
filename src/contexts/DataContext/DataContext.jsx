@@ -57,6 +57,7 @@ const initialDataState = {
     },
     filterByDate :"",
     search:"",
+    trash:[],
 }
 
 const DataContext = createContext();
