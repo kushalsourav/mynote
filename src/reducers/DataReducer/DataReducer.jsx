@@ -18,6 +18,10 @@ const DataReducer = (state, action) => {
                return {...state,     colorPallete : {...state.colorPallete, palleteChecked:action.palleteChecked, palleteId:action.palleteId }}
           case "RESET" : 
                return {...state , note: {...state.note , title:'', description:'', label:'', priority:''}}
+          case "ARCHIVE" :
+               return {...state, archives: action.archives};
+          case "FILTER" :
+               return {...state , filterLabel : {...state.filterLabel,  filterChecked:action.filterChecked,filterLabelName: action.filterLabelName}}
           default:
                break;
      }; 

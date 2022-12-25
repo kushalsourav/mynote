@@ -4,7 +4,7 @@ import { useData } from '../../contexts/DataContext/DataContext';
 import NoteCard from '../../components/NoteCard/NoteCard';
 import Grid12 from '../../components/Ui/Grid-1-2/Grid12'
 import useToast from '../../hooks/useToast';
-import { editNote, postNote } from '../../apis/api';
+import { editNote, postArchive, postNote } from '../../apis/api';
 
 const Home = () => {
 const {data, setData, getEditNote, handleSubmitNote} = useData();
@@ -21,6 +21,7 @@ const postToast = useToast();
                 colorPallete={data.colorPallete} 
                 postToast={postToast}
                 edit={editNote}
+                postArchive={postArchive}
                 />
             </Grid12>
             <Modal handleClose={() => setData({type:"MODAL", modal:false})} isOpen={data.modal}>

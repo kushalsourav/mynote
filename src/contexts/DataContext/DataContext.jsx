@@ -46,6 +46,11 @@ const initialDataState = {
        createdDate:"",
        colorCode: "#db10105e",
     },
+    archives: [],
+    filterLabel: {
+        filterChecked:  "",
+        filterLabelName: "",
+    },
 }
 
 const DataContext = createContext();
