@@ -22,6 +22,14 @@ const DataReducer = (state, action) => {
                return {...state, archives: action.archives};
           case "FILTER" :
                return {...state , filterLabel : {...state.filterLabel,  filterChecked:action.filterChecked,filterLabelName: action.filterLabelName}}
+          case "PRIORITY" :
+               return {...state , filterPriority : {...state.filterPriority,  filterChecked:action.filterChecked,filterPriorityLevel: action.filterPriorityLevel}}
+          case "FILTER_DATE" :
+               return {...state, filterByDate: action.filterByDate}
+          case "CLEAR_FILTER" :
+               return {...state, filterLabel: {...state.filterLabel, filterLabelName:''}, filterPriority:{...state.filterPriority, filterPriorityLevel:''}, filterByDate:''}
+          case "SEARCH" :
+               return {...state, search:action.search};
           default:
                break;
      }; 

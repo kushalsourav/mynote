@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { handleSubmitNote, getEditNote } from "../../helperFunctions/helperFunctions";
+import { handleSubmitNote, getEditNote, filterByDate } from "../../helperFunctions/helperFunctions";
 import DataReducer from "../../reducers/DataReducer/DataReducer";
 
 const initialDataState = {
@@ -51,6 +51,12 @@ const initialDataState = {
         filterChecked:  "",
         filterLabelName: "",
     },
+    filterPriority: {
+        filterChecked:  "",
+        filterPriorityLevel: "",
+    },
+    filterByDate :"",
+    search:"",
 }
 
 const DataContext = createContext();
@@ -59,9 +65,9 @@ const useData = () => useContext(DataContext);
 
 const DataProvider = ({children}) => {
     const [data, setData] = useReducer(DataReducer, initialDataState);
-    
+    const filteredData = filterByDate(data.notes, data.filterByDate);
     return(
-        <DataContext.Provider value={{data, setData,  handleSubmitNote, getEditNote}}>
+        <DataContext.Provider value={{data, setData,  handleSubmitNote, getEditNote, filteredData}}>
             {children}
         </DataContext.Provider>
     );
