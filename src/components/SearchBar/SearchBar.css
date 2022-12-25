@@ -1,0 +1,14 @@
+.searchbar {
+    width: 400px !important;
+    border-color: var(--color-tertiary) !important;
+}
+.search {
+    position: relative
+}
+.search-icon {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    color: var(--color-tertiary);
+    padding-right: 10px;
+}

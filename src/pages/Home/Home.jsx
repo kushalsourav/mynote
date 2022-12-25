@@ -7,13 +7,13 @@ import useToast from '../../hooks/useToast';
 import { editNote, postArchive, postNote } from '../../apis/api';
 
 const Home = () => {
-const {data, setData, getEditNote, handleSubmitNote} = useData();
+const {data, setData, getEditNote, handleSubmitNote, filteredData} = useData();
 const postToast = useToast();
     return(
         <div>
             <Grid12>
                 <NoteCard 
-                notes={data.notes} 
+                notes={filteredData} 
                 editNote={data.note} 
                 setData={setData}
                 getEditNote={getEditNote} 
@@ -22,6 +22,9 @@ const postToast = useToast();
                 postToast={postToast}
                 edit={editNote}
                 postArchive={postArchive}
+                filterText={data.search}
+                filterLabel={data.filterLabel}
+                filterPriority={data.filterPriority}  
                 />
             </Grid12>
             <Modal handleClose={() => setData({type:"MODAL", modal:false})} isOpen={data.modal}>

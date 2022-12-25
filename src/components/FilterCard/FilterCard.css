@@ -1,0 +1,50 @@
+.filters{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    border: 2px solid #424281;
+    z-index: 9999;
+    background-color: #fff;
+}
+.filter-card {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 300px 50px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+.filter-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+.filter-priority {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 200px;
+    margin: 0 auto;
+}
+.filter-input {
+    margin-right: 1rem;
+}
+.filter-date {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.filter-button-clear {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.filter-button-close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

@@ -2,15 +2,20 @@ import { Fragment } from "react";
 import "./NoteCard.css";
 import ColorCard from "../ColorCard/ColorCard";
 
-const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNote, colorPallete, postToast, edit,restoreNote, postArchive, filterLabel}) => {
+const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNote, colorPallete, postToast, edit,restoreNote, postArchive, filterLabel, filterText, filterPriority}) => {
 
     return (
         <>
         {notes.map((note) => {
-               if(filterLabel &&  filterLabel.filterChecked && !note.label.includes(filterLabel.filterLabelName)) {
-                return <Fragment key={note._id}></Fragment>;
-            }
- 
+                if(filterText && note.title.indexOf(filterText) === -1) {
+                    return <Fragment key={note._id}></Fragment>;
+                } 
+                if(filterLabel &&  filterLabel.filterChecked && !note.label.includes(filterLabel.filterLabelName)) {
+                    return <Fragment key={note._id}></Fragment>;
+                }
+                if(filterPriority &&  filterPriority.filterChecked && !note.priority.includes(filterPriority.filterPriorityLevel)) {
+                    return <Fragment key={note._id}></Fragment>;
+                }
                 return (
                 <div className="note-card" key={note._id} style={{backgroundColor:  note.colorCode}}>
                  { label &&  <span className="note-label">{note.label}</span>}

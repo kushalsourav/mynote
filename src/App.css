@@ -4,7 +4,11 @@ body {
     height: 100vh;
     font-family: 'Commissioner', sans-serif;
 }
-
+.container {
+    height: 86vh;
+    padding: 0 1.2rem;
+    overflow-y: scroll;
+}
 .cta-btn {
     background-color: var(--color-tertiary);
     border: 2px solid var(--color-tertiary);

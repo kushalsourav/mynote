@@ -8,12 +8,20 @@ const Archive = () => {
     const {data, setData} = useData();
     const postToast = useToast();
   return (
-    <div>
             <Grid12>
-            <NoteCard notes={data.archives}   setData={setData}  deleteNote={deleteArchive}  restoreNote={restoreArchive}
-            colorPallete={data.colorPallete}  colors={data.cardColors}  postToast={postToast}/> 
+              <NoteCard 
+                notes={data.archives}   
+                setData={setData}  
+                deleteNote={deleteArchive}  
+                restoreNote={restoreArchive}
+                colorPallete={data.colorPallete}  
+                colors={data.cardColors}  
+                postToast={postToast}
+                filterText={data.search}
+                filterPriority={data.filterPriority}
+                filterLabel={data.filterLabel}
+              /> 
             </Grid12>
-    </div>
   );
 };
 

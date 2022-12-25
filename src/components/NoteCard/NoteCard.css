@@ -2,6 +2,7 @@
   display: grid;
   grid-template-rows: 30px minmax(100px , auto) 30px;
   width: 400px;
+  height: 200px;
   padding: 1rem;
   border-radius: 1rem;
   position: relative;
