@@ -30,6 +30,8 @@ const DataReducer = (state, action) => {
                return {...state, filterLabel: {...state.filterLabel, filterLabelName:''}, filterPriority:{...state.filterPriority, filterPriorityLevel:''}, filterByDate:''}
           case "SEARCH" :
                return {...state, search:action.search};
+          case "TRASH" :
+               return {...state, trash:action.trash};
           default:
                break;
      }; 

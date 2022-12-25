@@ -3,12 +3,14 @@ import NoteCard from "../../components/NoteCard/NoteCard";
 import { useData } from "../../contexts/DataContext/DataContext";
 import { deleteArchive, restoreArchive } from "../../apis/api";
 import useToast from "../../hooks/useToast";
+import NoData from "../../components/NoData/NoData";
 
 const Archive = () => {
     const {data, setData} = useData();
     const postToast = useToast();
   return (
             <Grid12>
+              {data.archives.length === 0 && <NoData />}
               <NoteCard 
                 notes={data.archives}   
                 setData={setData}  

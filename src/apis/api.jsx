@@ -87,3 +87,56 @@ export const deleteArchive = async (noteID,  setData, postToast) => {
       console.log(error)
    }
 };
+
+export const postTrash = async (trashId,setData,postToast) => {
+   try {
+      await axios.post(`/api/notes/trash/${trashId}`, {},{headers: {authorization:localStorage.getItem("token")}}).then((response) => {
+         if(response.status === 201) {
+            getTrash(setData);
+            getNote(setData);
+            postToast("success", "Note moved to trash");
+         }
+     });
+   } catch (error) {
+      console.log(error);
+   }
+};
+
+const getTrash = async (setData) => {
+   try {
+      await axios.get('/api/trash',{headers: {authorization:localStorage.getItem("token")}}).then((response) =>{
+         setData({type:"TRASH", trash:response.data.trash});
+      });
+   } catch (error) {
+      console.log(error)
+   }
+};
+
+export const deleteTrash = async (trashId, setData, postToast) => {
+   try {
+      await axios.delete(`/api/trash/delete/${trashId}`, {headers: {authorization:localStorage.getItem("token")}}).then((response) => {
+        if(response.status === 200) {
+         getTrash(setData);
+         postToast("success", "note is removed from trash");
+        }
+     });
+   } catch (error) {
+      console.log(error);
+   }
+}
+
+export const restoreTrash = async (noteID,  setData, postToast) => {
+try {
+   await axios.post(`/api/trash/restore/${noteID}`, {}, {headers: {authorization:localStorage.getItem("token")}}).then((response) => {
+      if(response.status === 200) {
+         getTrash(setData)
+         getNote(setData)
+         postToast("success", "note is restored to home")
+      }
+   });
+} catch (error) {
+   console.log(error);
+}
+
+};
+

@@ -1,7 +1,7 @@
 const Grid12 = ({children}) => {
 
     return(
-        <div className="grid grid-1-2 container">
+        <div className="grid grid-1-2">
         {children}
         </div>
     );
