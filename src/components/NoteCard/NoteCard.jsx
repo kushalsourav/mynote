@@ -1,12 +1,15 @@
+import { Fragment } from "react";
 import "./NoteCard.css";
 import ColorCard from "../ColorCard/ColorCard";
 
-const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNote, colorPallete, postToast, edit}) => {
-
+const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNote, colorPallete, postToast, edit,restoreNote, postArchive, filterLabel}) => {
 
     return (
         <>
         {notes.map((note) => {
+               if(filterLabel &&  filterLabel.filterChecked && !note.label.includes(filterLabel.filterLabelName)) {
+                return <Fragment key={note._id}></Fragment>;
+            }
  
                 return (
                 <div className="note-card" key={note._id} style={{backgroundColor:  note.colorCode}}>
@@ -21,7 +24,12 @@ const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNo
                         <button className="btn-icon" onClick={() => {
                             deleteNote(note._id,setData,  postToast)
                         }}><i className="fa fa-trash" aria-hidden="true"></i></button>
-                    
+                        {
+                            postArchive && 
+                            <button className="btn-icon" onClick={() => {postArchive(note._id, note, setData, postToast)}}>
+                                    <i className="fa fa-archive" aria-hidden="true"></i>
+                            </button>
+                        }
                         { colors &&
                                 <div className="note-colors" style={{display:colorPallete.palleteChecked && colorPallete.palleteId === note._id   ?"block" : "none"}}>
                                        <ColorCard colors={colors} setData={setData} note={note} noteId={note._id} editNote={edit} />
@@ -30,6 +38,13 @@ const NoteCard = ({notes,label, getEditNote, editNote, setData,colors,  deleteNo
                          <label className="btn-icon"><i className="fa fa-palette">
                             <input type="checkbox" className="note-checkbox" checked={colorPallete.palleteChecked && colorPallete.palleteId === note._id } onChange={(e) => {setData({type:"PALLETE", palleteChecked: e.target.checked, palleteId:note._id })}}/>
                             </i></label> 
+                            {
+                            restoreNote &&    
+                            <button className="btn-icon" 
+                              onClick={() => {restoreNote(note._id, setData, postToast)}}>
+                              <i className="fa fa-window-restore" aria-hidden="true"></i>
+                            </button>
+                        }
                    
                         {
                             editNote &&   <button className="btn-icon btn-edit" 

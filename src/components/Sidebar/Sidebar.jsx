@@ -1,7 +1,7 @@
 import { Link , useLocation} from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = ({setData}) => {
+const Sidebar = ({setData,labels, filterLabel,}) => {
     return (
         <>
         <div className="sidebar">
@@ -36,6 +36,25 @@ const Sidebar = ({setData}) => {
             
             }}>Create new note</button>
             </div>
+            }
+            { 
+                useLocation().pathname === "/Label" && 
+                <div className="filter-labels">
+                Labels
+                    {labels.map(({labelName}) => {
+                        return (
+                            <label htmlFor={labelName}
+                            key={labelName}>
+                                <input type="checkbox" 
+                                id={labelName} className="filter-input" 
+                                value={labelName}
+                                checked={filterLabel.filterChecked && filterLabel.filterLabelName === labelName}
+                                onChange={(e) =>setData({type:"FILTER" ,filterChecked: e.target.checked, filterLabelName:labelName}) }
+                                /> {labelName}
+                            </label>
+                        )
+                    })}
+                </div>
             }
              </div>
         </div>
