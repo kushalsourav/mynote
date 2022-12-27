@@ -1,5 +1,15 @@
 import axios from "axios"
 
+export const  getUser =  async(setData) => {
+   try {
+      await axios.get("/api/user",{headers : { authorization: localStorage.getItem("token")} }).then((response) => 
+        setData({type:"USER_DATA", userData: response.data.user})
+      )
+   } catch (error) {
+      
+   };
+};
+
 export const postNote = async (note, setData, postToast) => {
     try {
        await axios.post('/api/notes', {note}, {headers: {authorization: localStorage.getItem('token')}}).then((response) => {
@@ -10,8 +20,8 @@ export const postNote = async (note, setData, postToast) => {
          })
     } catch (error) {
        console.log(error)
-    }
- }
+    };
+ };
  
  export const getNote = async (setData) => {
     try {
