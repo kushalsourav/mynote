@@ -5,7 +5,7 @@ import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import { useData } from "../../contexts/DataContext/DataContext";
 import useToast from "../../hooks/useToast";
 import useToggle from "../../hooks/useToggle";
-import { getUser } from "../../apis/apis";
+import { getUser } from "../../apis/api";
 
 const SignIn = () => {
     const {authDispatch, authState} = useAuth();
