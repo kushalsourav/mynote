@@ -1,10 +1,11 @@
 import { Link , useLocation} from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = ({setData,labels, filterLabel,}) => {
+const Sidebar = ({setData,labels, filterLabel,toggle}) => {
+    const className = "sidebar "
     return (
         <>
-        <div className="sidebar">
+        <div  className={className + ` ${toggle ? "sidebar-active" : "sidebar-inactive"}` }>
              <div className="sidebar-user">
              <Link to="/Home"  className="sidebar-items">
                 <div className="sidebar-icon"><i className="fa fa-home" aria-hidden="true"></i></div>
@@ -29,13 +30,11 @@ const Sidebar = ({setData,labels, filterLabel,}) => {
             </Link>
             {
                 useLocation().pathname === "/Home" &&
-                <div>
                 <button className="cta-btn btn btn-large" onClick={() => {
                     setData({type:"RESET"})
                     setData({type:"MODAL", modal:true})
             
             }}>Create new note</button>
-            </div>
             }
             { 
                 useLocation().pathname === "/Label" && 

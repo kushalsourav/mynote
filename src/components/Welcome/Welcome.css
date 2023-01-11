@@ -29,7 +29,7 @@
 .welcome-authenticate {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 18.75rem;
 }
 .welcome-button {
     background-color: var(--color-tertiary);
@@ -49,4 +49,34 @@
     margin: 3.5rem 3.5rem;
     overflow:hidden;
     background-size: cover;
+}
+@media (max-width:768px) {
+    .welcome {
+        height: 100%;
+    }
+    .welcome-form {
+        position: relative;
+    }
+    .welcome-image {
+        width: 28rem;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+@media (max-width:480px) {
+    .welcome {
+        height: 100%;
+    }
+    .welcome-image {
+       position: relative;
+        width: 18.75rem;
+        height: auto;
+    }
+    .welcome-form {
+        height: auto;
+    }
 }

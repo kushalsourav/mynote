@@ -17,7 +17,7 @@ const WelcomePage = () => {
         <div className="welcome-form">
           {data.formType === 'signin' && toggle && <SignIn />}
           { data.formType === 'signup'&& toggle   &&  <SignUp />}
-          {!toggle && <img src={welcomeImage} className="img-responsive" alt="welcomeimage" />} 
+          {!toggle && <img src={welcomeImage} className="img-responsive welcome-image" alt="welcomeimage" />} 
         </div>
         </Grid12>
         </>

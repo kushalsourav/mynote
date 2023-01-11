@@ -9,6 +9,7 @@ const Archive = () => {
     const {data, setData} = useData();
     const postToast = useToast();
   return (
+          <div className="container">
             <Grid12>
               {data.archives.length === 0 && <NoData />}
               <NoteCard 
@@ -24,6 +25,7 @@ const Archive = () => {
                 filterLabel={data.filterLabel}
               /> 
             </Grid12>
+          </div>
   );
 };
 

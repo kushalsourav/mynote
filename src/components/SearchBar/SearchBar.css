@@ -1,5 +1,5 @@
 .searchbar {
-    width: 400px !important;
+    width: auto;
     border-color: var(--color-tertiary) !important;
 }
 .search {
@@ -11,4 +11,9 @@
     right: 0;
     color: var(--color-tertiary);
     padding-right: 10px;
+}
+@media (max-width:480px) {
+    .searchbar {
+        width: 8rem;
+    }
 }

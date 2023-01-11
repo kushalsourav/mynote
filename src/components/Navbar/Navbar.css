@@ -6,3 +6,20 @@
     font-size: 1.6rem;
     margin: 5px 0 0 1rem;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 18.75rem;
+        float: left;
+    }
+}
+@media (max-width: 480px) {
+    .navbar {
+        width: 15rem;
+        float: left;
+    }
+   .btn-filter {
+    font-size: 1.2rem;
+    margin: 0;
+   }
+}

@@ -1,0 +1,8 @@
+@media (max-width:480px) {
+    .personal-information {
+        margin-top: 2.5rem;
+    }
+    .user-head {
+        font-size: 1.4rem
+    }
+}

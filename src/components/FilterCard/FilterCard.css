@@ -8,8 +8,8 @@
 }
 .filter-card {
     display: grid;
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 300px 50px;
+    grid-template-columns: 12.5rem 12.5rem;
+    grid-template-rows: 18.75rem 3.125rem;
     padding: 1rem;
     font-size: 1.1rem;
     position: relative;
@@ -47,4 +47,22 @@
     position: absolute;
     bottom: 0;
     right: 0;
+}
+@media (max-width: 768px) {
+    .filter-card {
+        grid-template-columns: 8.4rem 8.4rem;
+        grid-template-rows: 15rem 3rem;
+        font-size: 14px;
+    }
+    .filter-labels {
+        padding: 0 ;
+    }
+}
+@media (max-width: 480px) {
+ .filters {
+   right: 0;
+ }
+ .filter-labels {
+    align-items: flex-start;
+ }
 }

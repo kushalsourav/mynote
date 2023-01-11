@@ -15,14 +15,18 @@ const Main = () => {
   const {authDispatch, handleLogout} = useAuth();
   const {data ,setData} = useData();
   const [toggle, setToggle] = useToggle();
+  const [sidebar, setSidebar] = useToggle();
   const location = useLocation();
   const navigate = useNavigate();
   return (
     <div>
         <Grid28>
-          {location.pathname !== '/' && <Sidebar setData={setData} filterLabel={data.filterLabel} labels={data.label} />}
+           <button className="sidebar-toggler" onClick={() => setSidebar()}>
+                    <i class="fa fa-sliders" aria-hidden="true"></i>
+          </button>
+          {location.pathname !== '/' && <Sidebar setData={setData} filterLabel={data.filterLabel} labels={data.label} toggle={sidebar} />}
           {location.pathname !== '/' &&
-          <div>
+          <div className="sub-container">
             <Navbar  
             navigate={navigate} 
             authDispatch={authDispatch} 

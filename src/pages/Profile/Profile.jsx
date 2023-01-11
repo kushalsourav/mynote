@@ -6,7 +6,7 @@ const Profile = () => {
   const {authState} = useAuth();
   return (
         <div className="personal-information">
-            <h2>Personal information</h2>
+            <h2 className="user-head">Personal information</h2>
             <div className="personal-details">
                   <p className="user-email">Email: {authState.userData.email}</p>
                   <p className="user-name">Firstname : {authState.userData.firstName}</p>

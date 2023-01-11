@@ -29,3 +29,71 @@
 .sidebar-icon {
     color: var(--color-tertiary);
 }
+.sidebar-toggler {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 10rem;
+    }
+    .sidebar-items {
+        gap: 1rem;
+    }
+    .sidebar-user>  .btn{
+        font-size: 12px;
+        padding: 8px 0;
+    }
+    .grid-2-8 {
+        grid-template-columns: 16.25rem auto !important;
+    }
+    .sub-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+  
+    .grid-2-8 {
+        grid-template-columns: 16.25rem;
+    }
+    .sidebar-active {
+        width: 90%;
+        display: block;
+        position: absolute;
+        z-index: 999;
+        background-color: #fff;
+        height: 100%;
+        margin-top: 4.4rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    .sidebar-items {
+        text-align: center;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    .sidebar-inactive {
+        display: none;
+    }
+
+    .sidebar-toggler {
+        display: block;
+        position: absolute;
+        top: 5rem;
+        right: 2.5rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--color-tertiary);
+        z-index: 9999;
+    }
+
+    .grid-2-8 {
+        position: relative;
+    }
+}

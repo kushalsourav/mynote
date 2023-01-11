@@ -29,3 +29,12 @@
     font-size: 1rem;
     font-weight: bold;
 }
+
+@media (max-width: 480px) {
+    .form-box {
+        width: 16rem;
+    }
+    .form-btn {
+        padding: 0 8px;
+    }
+}

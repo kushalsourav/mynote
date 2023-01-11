@@ -1,8 +1,8 @@
 .note-card {
   display: grid;
-  grid-template-rows: 30px minmax(100px , auto) 30px;
-  width: 400px;
-  height: 200px;
+  grid-template-rows: 1.875rem minmax(6.25rem , auto) 1.875rem;
+  width: 25rem;
+  height: 12.5rem;
   padding: 1rem;
   border-radius: 1rem;
   position: relative;
@@ -51,4 +51,18 @@
 position: absolute;
 top: 1rem;
 right: 1rem;
+}
+
+@media (max-width: 480px) {
+    .grid-1-2 {
+        margin-top: 2rem;
+    }
+    .note-card {
+        width: 14rem;
+        height: 12rem;
+        margin: 0 auto;
+    }
+    .note-date {
+        font-size: 12px;
+    }
 }

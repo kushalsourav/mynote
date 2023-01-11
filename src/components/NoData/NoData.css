@@ -1,8 +1,15 @@
 .no-data {
-    height: 500px;
-    width: 500px;
+    height: 31.25rem;
+    width: 31.25rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+@media(max-width: 768px) {
+    .no-data {
+        height: 20rem;
+        width: 20rem;
+    }
 }
